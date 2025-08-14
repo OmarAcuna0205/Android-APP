@@ -19,8 +19,3 @@ This Android application is built with **Kotlin** and **Jetpack Compose** follow
 - **Model**: Manages data and business logic.
 - **View**: Composable UI components for the interface.
 - **ViewModel**: Handles the interaction between the Model and View, exposing data in a lifecycle-aware manner.
-
-## Getting Started
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
