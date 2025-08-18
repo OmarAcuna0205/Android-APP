@@ -60,7 +60,7 @@ fun TabBarNavigationView(navController: NavHostController = rememberNavControlle
             // Puedes usar SmallTopAppBar o CenterAlignedTopAppBar
             CenterAlignedTopAppBar(
                 title = { Text(text = "Android Omar Acuña 13097") },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = Color(0xFFADD8E6), // Azul
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = Color(0xFF87CEFA), // Azul
                 titleContentColor = Color.White
             )
             )
