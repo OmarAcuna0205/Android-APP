@@ -14,7 +14,7 @@ import com.jorgeromo.androidClassMp1.firstpartial.FirstPartialView
 import com.jorgeromo.androidClassMp1.ids.imc.views.IMCView
 import com.jorgeromo.androidClassMp1.ids.IdsView
 import com.jorgeromo.androidClassMp1.ids.location.views.LocationListScreen
-import com.jorgeromo.androidClassMp1.ids.login.views.LoginView
+import com.jorgeromo.androidClassMp1.firstpartial.login.views.LoginView
 import com.jorgeromo.androidClassMp1.ids.student.views.StudentView
 import com.jorgeromo.androidClassMp1.ids.sum.views.SumView
 import com.jorgeromo.androidClassMp1.ids.temperature.views.TempView
@@ -95,7 +95,7 @@ fun TabBarNavigationView(navController: NavHostController = rememberNavControlle
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(ScreenNavigation.Ids.route) { IdsView(navController) }
-            composable(ScreenNavigation.FirstPartial.route) { FirstPartialView() }
+            composable(ScreenNavigation.FirstPartial.route) { FirstPartialView(navController) }
             composable(ScreenNavigation.SecondPartial.route) { SecondPartialView() }
             composable(ScreenNavigation.ThirdPartial.route) { ThirdPartialView(navController) }
 
