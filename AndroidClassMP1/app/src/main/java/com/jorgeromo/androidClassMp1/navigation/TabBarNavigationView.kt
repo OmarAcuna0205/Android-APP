@@ -20,6 +20,7 @@ import com.jorgeromo.androidClassMp1.ids.sum.views.SumView
 import com.jorgeromo.androidClassMp1.ids.temperature.views.TempView
 import com.jorgeromo.androidClassMp1.thirdpartial.ThirdPartialView
 import androidx.compose.ui.graphics.Color
+import com.jorgeromo.androidClassMp1.firstpartial.lottieanimation.LottieView
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -98,6 +99,7 @@ fun TabBarNavigationView(navController: NavHostController = rememberNavControlle
             composable(ScreenNavigation.FirstPartial.route) { FirstPartialView(navController) }
             composable(ScreenNavigation.SecondPartial.route) { SecondPartialView() }
             composable(ScreenNavigation.ThirdPartial.route) { ThirdPartialView(navController) }
+            composable(ScreenNavigation.Lottie.route) {LottieView(navController)}
 
             // Rutas internas
             composable(ScreenNavigation.IMC.route) { IMCView() }
