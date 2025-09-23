@@ -20,7 +20,9 @@ import com.jorgeromo.androidClassMp1.ids.sum.views.SumView
 import com.jorgeromo.androidClassMp1.ids.temperature.views.TempView
 import com.jorgeromo.androidClassMp1.thirdpartial.ThirdPartialView
 import androidx.compose.ui.graphics.Color
+import com.jorgeromo.androidClassMp1.firstpartial.login.views.HomeView
 import com.jorgeromo.androidClassMp1.firstpartial.lottieanimation.LottieView
+import com.jorgeromo.androidClassMp1.secondpartial.qrcode.views.QrCodeView
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -97,17 +99,19 @@ fun TabBarNavigationView(navController: NavHostController = rememberNavControlle
         ) {
             composable(ScreenNavigation.Ids.route) { IdsView(navController) }
             composable(ScreenNavigation.FirstPartial.route) { FirstPartialView(navController) }
-            composable(ScreenNavigation.SecondPartial.route) { SecondPartialView() }
+            composable(ScreenNavigation.SecondPartial.route) { SecondPartialView(navController) }
             composable(ScreenNavigation.ThirdPartial.route) { ThirdPartialView(navController) }
             composable(ScreenNavigation.Lottie.route) {LottieView(navController)}
 
             // Rutas internas
             composable(ScreenNavigation.IMC.route) { IMCView() }
-            composable(ScreenNavigation.Login.route) { LoginView() }
+            composable(ScreenNavigation.Login.route) { LoginView(navController) }
+            composable(ScreenNavigation.Home.route) { HomeView() }
             composable(ScreenNavigation.Sum.route) { SumView() }
             composable(ScreenNavigation.Temperature.route) { TempView() }
             composable(ScreenNavigation.StudentList.route) { StudentView() }
             composable(ScreenNavigation.Locations.route) { LocationListScreen() }
+            composable(ScreenNavigation.QrCode.route) { QrCodeView() }
         }
     }
 }
