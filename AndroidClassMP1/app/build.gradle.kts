@@ -68,10 +68,11 @@ dependencies {
 
     // ViewModel para Compose (recomendado 2.8.x)
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.4")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
 
     // Networking (no requerido para el onboarding)
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.6.4")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
 
     // Pager moderno (HorizontalPager / rememberPagerState)
@@ -91,4 +92,6 @@ dependencies {
     implementation("androidx.camera:camera-view:1.3.0")
     implementation("com.google.mlkit:barcode-scanning:17.0.3")
     implementation("com.google.mlkit:vision-common:17.3.0")
+
+    implementation("io.coil-kt:coil-compose:2.5.0")
 }
