@@ -1,6 +1,5 @@
 package com.jorgeromo.androidClassMp1.navigation
 
-import SecondPartialView
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -20,8 +19,9 @@ import com.jorgeromo.androidClassMp1.ids.sum.views.SumView
 import com.jorgeromo.androidClassMp1.ids.temperature.views.TempView
 import com.jorgeromo.androidClassMp1.thirdpartial.ThirdPartialView
 import androidx.compose.ui.graphics.Color
-import com.jorgeromo.androidClassMp1.firstpartial.login.views.HomeView
 import com.jorgeromo.androidClassMp1.firstpartial.lottieanimation.LottieView
+import com.jorgeromo.androidClassMp1.secondpartial.SecondPartialView
+import com.jorgeromo.androidClassMp1.secondpartial.home.views.HomeScreen // <-- IMPORT AÑADIDO
 import com.jorgeromo.androidClassMp1.secondpartial.qrcode.views.QrCodeView
 
 
@@ -35,15 +35,13 @@ fun TabBarNavigationView(navController: NavHostController = rememberNavControlle
         ScreenNavigation.ThirdPartial
     )
 
-    // Mapa de títulos por ruta (incluye tabs y pantallas internas)
+    // Mapa de títulos por ruta
     val routeTitles = remember {
         mapOf(
             ScreenNavigation.Ids.route to ScreenNavigation.Ids.label,
             ScreenNavigation.FirstPartial.route to ScreenNavigation.FirstPartial.label,
             ScreenNavigation.SecondPartial.route to ScreenNavigation.SecondPartial.label,
             ScreenNavigation.ThirdPartial.route to ScreenNavigation.ThirdPartial.label,
-
-            // Rutas internas (ajusta a tus strings preferidos)
             ScreenNavigation.IMC.route to "IMC",
             ScreenNavigation.Login.route to "Login",
             ScreenNavigation.Sum.route to "Suma",
@@ -54,18 +52,16 @@ fun TabBarNavigationView(navController: NavHostController = rememberNavControlle
     }
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
-    // Si usas nested graphs, puedes leer la jerarquía; aquí basta con la route actual:
     val currentRoute = navBackStackEntry?.destination?.route
-    val currentTitle = routeTitles[currentRoute] ?: ""
 
     Scaffold(
         topBar = {
-            // Puedes usar SmallTopAppBar o CenterAlignedTopAppBar
             CenterAlignedTopAppBar(
                 title = { Text(text = "Android Omar Acuña 13097") },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = Color(0xFF87CEFA), // Azul
-                titleContentColor = Color.White
-            )
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                    containerColor = Color(0xFF87CEFA), // Azul
+                    titleContentColor = Color.White
+                )
             )
         },
         bottomBar = {
@@ -106,7 +102,7 @@ fun TabBarNavigationView(navController: NavHostController = rememberNavControlle
             // Rutas internas
             composable(ScreenNavigation.IMC.route) { IMCView() }
             composable(ScreenNavigation.Login.route) { LoginView(navController) }
-            composable(ScreenNavigation.Home.route) { HomeView() }
+            composable(ScreenNavigation.Home.route) { HomeScreen() } // Apunta a la pantalla del JSON
             composable(ScreenNavigation.Sum.route) { SumView() }
             composable(ScreenNavigation.Temperature.route) { TempView() }
             composable(ScreenNavigation.StudentList.route) { StudentView() }
