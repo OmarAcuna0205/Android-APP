@@ -51,5 +51,16 @@ fun SecondPartialView(navController: NavController) {
         ) {
             Text(text = "Ir a la Home Screen (JSON)")
         }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Button(
+            onClick = {
+                navController.navigate(ScreenNavigation.LocationCoordinate.route)
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Location Coordinate")
+        }
     }
 }
